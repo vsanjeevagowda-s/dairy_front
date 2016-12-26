@@ -1,0 +1,29 @@
+<div class="row" ng-controller="SignupCtrl">
+<div class="col-md-4"></div>
+<div class="col-md-4 well login-form">
+	<h2 class="login-title">Register</h2>
+	<hr>
+ <form class="login">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="user.email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="user.password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password Confirmation</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="user.password_confirmation">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Code</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="user.code">
+  </div>
+   <button type="submit" class="btn btn-success">Submit</button>
+  <a type="submit" class="btn btn-default pull-right" href="#/">Login</a><br>
+  <span class="pull-right">If already registered?</span>
+</form>
+</div>
+<div class="col-md-4"></div>
+</div>
