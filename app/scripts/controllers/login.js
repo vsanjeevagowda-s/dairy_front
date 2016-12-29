@@ -7,7 +7,16 @@
  * # MainCtrl
  * Controller of the dairyFrontendApp
  */
-angular.module('dairyFrontendApp')
-  .controller('LoginCtrl', function () {
+
+  app.controller('LoginCtrl',['$scope' , function ($scope) {
+
+  	$scope.login =function(){
+ 		var params = {
+ 			"email" : $scope.login.email,
+ 			"password" : $scope.login.password
+ 		}
+
+ 		
+ 	}
    
-  });
+  }]);

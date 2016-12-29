@@ -7,7 +7,14 @@
  * # AboutCtrl
  * Controller of the dairyFrontendApp
  */
-angular.module('dairyFrontendApp')
-  .controller('SignupCtrl', function () {
-   
-  });
+
+ app.controller('SignupCtrl',['$scope' ,  function ($scope, $auth) {
+ 	 $scope.signup = function() {
+ 	 	debugger;
+ 		var params = {
+ 			"email" : $scope.user.email,
+ 			"password" : $scope.user.password,
+ 			"password_confirmation" : $scope.user.password_confirmation
+ 		}
+ 	}
+ }]);
