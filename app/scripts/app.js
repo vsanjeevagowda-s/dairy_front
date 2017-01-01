@@ -15,23 +15,32 @@
   'ngRoute',
   'ngSanitize',
   'ngTouch',
-  'ng-token-auth'
+  'ngStorage',
   'restangular'
   ]);
- app.config(function ($routeProvider,$authProvider, RestangularProvider) {
+ app.config(function ($routeProvider, RestangularProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/login.html',
     controller: 'LoginCtrl'
     
   })
-  .when('/signup', {
+  .when("/signup", {
     templateUrl: 'views/signup.html',
     controller: 'SignupCtrl'
+    
+  })
+  .when("/dashboard", {
+    templateUrl: 'views/dashboard.html',
+    controller: 'DashboardCtrl'
     
   })
   .otherwise({
     redirectTo: '/'
   });
- RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
+  debugger;
+ RestangularProvider.setBaseUrl('http://localhost:3000');
+  
 });
+
+

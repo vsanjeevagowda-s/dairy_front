@@ -10,7 +10,8 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "ng-token-auth": "^0.0.29",
-    "restangular": "^1.6.0"
+    "restangular": "^1.6.0",
+    "ngstorage": "^0.3.11"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
