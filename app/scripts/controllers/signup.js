@@ -10,7 +10,7 @@
 
  app.controller('SignupCtrl',['$scope' ,'Restangular','$location','$rootScope' ,  function ($scope, Restangular, $location,$rootScope) {
  	$scope.signup = function() {
- 		debugger;
+ 	
  		var params = { 
  				"user" :{
 					 			"email" : $scope.user.email,

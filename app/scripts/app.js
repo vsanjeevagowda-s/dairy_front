@@ -38,7 +38,7 @@
   .otherwise({
     redirectTo: '/'
   });
-  debugger;
+
  RestangularProvider.setBaseUrl('https://diary-back.herokuapp.com');
   
 });

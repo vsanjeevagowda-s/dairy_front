@@ -8,9 +8,9 @@
  * Controller of the dairyFrontendApp
  */
 
-  app.controller('LoginCtrl',['$scope' ,'Restangular','$location','$rootScope' ,  function ($scope, Restangular, $location,$rootScope) {
+ app.controller('LoginCtrl',['$scope' ,'Restangular','$location','$rootScope' ,  function ($scope, Restangular, $location,$rootScope) {
 
-  	$scope.login =function(){
+ 	$scope.login =function(){
  		var params = {
  			"email" : $scope.login.email,
  			"password" : $scope.login.password
@@ -18,26 +18,34 @@
 
  		Restangular.one("/api/login").customPOST(params).then(function(response){
  			console.log(response);
- 			debugger;
+ 			
  			if(response.status==200){
- 				debugger;
+ 				
  				$rootScope.loggedIn = true;
- 			debugger;
- 			localStorage.setItem("auth_token",response.auth_token);
- 			debugger;
+ 				
+ 				localStorage.setItem("auth_token",response.auth_token);
+ 				
  			// location.reload();
- 			debugger;
- 				$location.path("/dashboard");
- 				debugger;
- 			}else{
- 				debugger;
- 				$location.path("/");
- 				debugger;
- 				$scope.failed_login = true;
- 			}
- 		});
+ 			
+ 			$location.path("/dashboard");
+ 			
+ 		}else{
+ 			
+ 			$location.path("/");
+ 			
+ 			$scope.failed_login = true;
+ 		}
+ 	});
 
  		
  	};
-   
-  }]);
+var logout={
+	"auth_token" : localStorage.getItem("auth_token")
+}
+
+ 	Restangular.one("/api/logout").customPOST(logout).then(function(response){
+
+ 	});
+
+ }]);
+
