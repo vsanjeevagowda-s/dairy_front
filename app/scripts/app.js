@@ -39,7 +39,7 @@
     redirectTo: '/'
   });
 
- RestangularProvider.setBaseUrl('http://localhost:3000');
+ RestangularProvider.setBaseUrl('https://diary-back.herokuapp.com');
   
 });
 
