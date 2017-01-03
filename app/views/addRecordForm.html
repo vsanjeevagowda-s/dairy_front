@@ -1,10 +1,58 @@
- <form>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email">
+ <form >
+  <div class="form-group jumbotron">
+        <label for="email">Date:</label>
+        <input type="date" class="form-control" id="email"  required  ng-model="morning">
+      </div>
+   <div class="panel-group">
+     <div class="panel panel-primary">
+      <div class="panel-heading"><i>Good Food Good Mood</i></div>
+      <div class="panel-body">
+       <div class="form-group">
+        <label for="email">Morning:</label>
+        <input type="email" class="form-control" id="email" placeholder="Breakfast special...?" required autofocus="true" ng-model="morning">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Afternoon:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Lunch special...?" ng-model="afternoon" required >
+      </div>
+      <div class="form-group">
+        <label for="pwd">Evening:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Evening special..?" ng-model="evening" required>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Night:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Dinner special..?" ng-model="night" required>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+</div>
+</form>
+
+<form >
+  <div class="panel-group">
+   <div class="panel panel-success">
+    <div class="panel-heading">Outside Work</div>
+    <div class="panel-body">
+     <div class="form-group">
+      <label for="pwd">Place:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="evening" required>
+    </div>
   </div>
+</div>
+</div>
+</form>
+
+
+<form >
+  <div class="panel-group">
+   <div class="panel panel-danger">
+    <div class="panel-heading">Extras</div>
+    <div class="panel-body">
+     <div class="form-group">
+      <label for="comment">Comments:</label>
+      <textarea class="form-control" rows="2" id="comment"></textarea>
+    </div>
+  </div>
+</div>
+</div>
 </form>

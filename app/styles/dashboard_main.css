@@ -5,9 +5,7 @@
 .btn-circle.btn-xl {
   width: 100px;
   height: 100px;
-  /*padding: 10px 16px;*/
   font-size: 12px;
-  /*line-height: 1.33;*/
   border-radius: 50%;
   box-shadow: black 5px 5px 10px 2px;
 }
