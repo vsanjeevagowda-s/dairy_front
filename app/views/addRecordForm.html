@@ -1,9 +1,10 @@
+  <div class="modal-body">
  <form >
   <div class="form-group jumbotron">
         <label for="email">Date:</label>
-        <input type="date" class="form-control" id="email"  required  ng-model="morning">
+        <input type="date" class="form-control" id="date"  required  ng-model="record.date">
       </div>
-   <div class="panel-group">
+   <!-- <div class="panel-group">
      <div class="panel panel-primary">
       <div class="panel-heading"><i>Good Food Good Mood</i></div>
       <div class="panel-body">
@@ -25,22 +26,22 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 </form>
 
-<form >
+<!-- <form >
   <div class="panel-group">
    <div class="panel panel-success">
     <div class="panel-heading">Outside Work</div>
     <div class="panel-body">
      <div class="form-group">
       <label for="pwd">Place:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="evening" required>
+      <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="place" required>
     </div>
   </div>
 </div>
 </div>
-</form>
+</form> -->
 
 
 <form >
@@ -50,9 +51,15 @@
     <div class="panel-body">
      <div class="form-group">
       <label for="comment">Comments:</label>
-      <textarea class="form-control" rows="2" id="comment"></textarea>
+      <textarea class="form-control" rows="2" ng-model="comments" id="record.comments"></textarea>
     </div>
   </div>
 </div>
 </div>
 </form>
+
+</div>
+ <div class="modal-footer">
+         <button type="submit" class="btn btn-success" ng-click="addRecord(record)">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
