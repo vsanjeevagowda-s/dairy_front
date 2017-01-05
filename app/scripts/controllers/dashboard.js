@@ -55,7 +55,7 @@
 //addRecordForm Directive
 app.directive('addRecordForm', function(){
 	return{
-		templateUrl: "../views/addRecordForm.html"
+		templateUrl: "..app/views/addRecordForm.html"
 
 	}
 });
