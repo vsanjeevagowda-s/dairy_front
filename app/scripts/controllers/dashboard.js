@@ -21,32 +21,41 @@
  		$scope.records = response.data;
  	});
 
- 	$scope.addRecord = function(record){
- 		console.log(record);
- 		console.log($("#date").val().split("-").reverse().join("-"));
- 		console.log("comments : "+record.comments);
+ 	$scope.addRecord = function(){
+ 		debugger;
  		var addRecordParams={ 
  			"auth_token" : localStorage.getItem("auth_token"),
  			"record" :{
- 			
- 			"date" : $("#date").val().split("-").reverse().join("-"),
- 			"morning" : record.morning,
- 			"afternoon" : record.afternoon,
- 			"evening" : record.evening,
- 			"night" : record.night,
- 			"place" : record.place,
- 			"comments" : record.comments
+ 				"date" : $("#date").val().split("-").reverse().join("-"),
+ 				// "morning" : $scope.morning,
+ 				// "afternoon" : $scope.afternoon,
+ 				// "evening" : $scope.evening,
+ 				// "night" : $scope.night,
+ 				// "place" : $scope.place,
+ 				"comments" : $scope.comments
+ 			}
  		}
- 	}
- 	Restangular.one("/record/create").customPOST(addRecordParams).then(function(response){
- 		console.log(response);
- 		if(response.status == 200){
- 			$scope.recordAddedSuccessfuly = true;
- 		}else{
+ 		Restangular.one("/record/create").customPOST(addRecordParams).then(function(response){
+ 			console.log(response);
  			$scope.recordAddedSuccessfuly = false;
- 		}
- 	});
+ 			$scope.failedToCreateRecord = false;
+ 			if(response.status == 200){
+ 				debugger;
+ 				$scope.recordAddedSuccessfuly = true;
+ 			}else{
+ 				$scope.failedToCreateRecord = true;
+ 			}
+ 		});
 
  	}; 	// addRecordFunctionends
 
  }]);
+
+
+//addRecordForm Directive
+app.directive('addRecordForm', function(){
+	return{
+		templateUrl: "../views/addRecordForm.html"
+
+	}
+});
