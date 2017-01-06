@@ -49,3 +49,10 @@
 });
 
 
+//addRecordForm Directive
+app.directive('addRecordForm', function(){
+  return{
+    templateUrl: "views/addRecordForm.html"
+
+  }
+});
