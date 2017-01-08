@@ -62,8 +62,8 @@ function getRecords(){
  	$scope.addExpenseField = function(){
  		  $scope.expenseFormInput.push({"product" : "", "price" : ""});
  	};
- 	$scope.removeExpenseField = function(){
- 		  $scope.expenseFormInput.splice($scope.expenseFormInput.length-1 , 1);
+ 	$scope.removeExpenseField = function(index){
+ 		  $scope.expenseFormInput.splice(index , 1);
  	};
  	$scope.addExpense = function(){
  		console.log($scope.expenseFormInput);
