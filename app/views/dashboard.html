@@ -12,7 +12,7 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">All Record</a></li>
+					<li><a href="/#!/records">All Record</a></li>
 					<li><a href="#">Expences</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -143,11 +143,14 @@
 						<h4 class="modal-title">Add Expence</h4>
 					</div>
 					<div class="modal-body">
-						<div ng-include="'views/addExpenceForm.html'">
+					
+							<div add-expense-form ></div>
+								
+					
 						</div>
-					</div>
+				
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-success">Submit</button>
+						<button type="submit" class="btn btn-success" ng-click="addExpense()">Submit</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>

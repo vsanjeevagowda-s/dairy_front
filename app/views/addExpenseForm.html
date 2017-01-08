@@ -1,0 +1,28 @@
+ <div class="row ">
+ <div class="col-md-11">
+ 	<form >
+ 		<table  class="table ">
+ 			<thead>
+ 				<tr><th>Product:</th><th>Price:</th><th><button ng-click="addExpenseField()" >add</button></th></tr>
+ 			</thead>
+ 			<tbody>
+ 				<tr ng-repeat="inputfield in expenseFormInput">
+ 					<td>
+ 						<div class="form-group">
+ 						<textarea class="form-control" cols="80" rows="2" id="product" placeholder="product name...?" autofocus="true" ng-model="inputfield.product"></textarea>
+ 						</div>
+ 					</td>
+ 					<td>
+ 						<div class="form-group">
+ 							<input type="number"  class="form-control" id="product" placeholder="price"   ng-model="inputfield.price">
+ 						</div>
+ 					</td>
+ 					<td>
+ 						<button ng-click="removeExpenseField()" >remove</button>
+ 					</td>
+ 				</tr>
+ 			</tbody>
+ 		</table>
+ 	</form>
+ </div>
+ </div>

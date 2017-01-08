@@ -44,7 +44,7 @@
     redirectTo: '/'
   });
 
- RestangularProvider.setBaseUrl('https://diary-back.herokuapp.com');
+ RestangularProvider.setBaseUrl('http://localhost:3000');
   
 });
 
@@ -56,3 +56,12 @@ app.directive('addRecordForm', function(){
 
   }
 });
+
+
+app.directive('addExpenseForm', function(){
+  return{
+    templateUrl: "views/addExpenseForm.html"
+
+  }
+});
+
