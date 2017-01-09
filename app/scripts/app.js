@@ -65,3 +65,12 @@ app.directive('addExpenseForm', function(){
   }
 });
 
+app.directive('navBar2', function(){
+  return{
+    templateUrl: "views/navbar2.html"
+
+  }
+});
+
+
+

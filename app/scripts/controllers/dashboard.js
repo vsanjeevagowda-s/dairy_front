@@ -11,7 +11,7 @@
 
 
  app.controller('DashboardCtrl',['$scope','Restangular','$localStorage','$timeout' ,'$rootScope','$location' ,function ($scope, Restangular,$localStorage, $timeout,$rootScope,$location,RestangularProvider) {
-
+$scope.newDate = new Date();
  
 getRecords();
 function getRecords(){
@@ -57,7 +57,7 @@ function getRecords(){
  	}; 	// addRecordFunction ends
 
 
- 	$scope.expenseFormInput = [{"product" : "", "price" : ""}];
+ 	$scope.expenseFormInput = [];
 
  	$scope.addExpenseField = function(){
  		  $scope.expenseFormInput.push({"product" : "", "price" : ""});

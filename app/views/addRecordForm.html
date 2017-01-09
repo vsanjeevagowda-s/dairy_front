@@ -1,70 +1,92 @@
 <form name="myForm" >
-  <div class="form-group jumbotron">
-        <label for="email">Date:</label>
-        <input type="date" class="form-control" id="date"  required  ng-model="record.date" >
-      </div>
-   <div class="panel-group">
+  <div class="form-group jumbotron" ng-init="addrecorddate=newDate"  >
+    <label for="email">Date:</label>
+    <input type="date" class="form-control" id="date" ng-model="addrecorddate" >
+  </div>
+   <!-- <div class="panel-group">
      <div class="panel panel-primary">
       <div class="panel-heading"><i>Good Food Good Mood</i></div>
       <div class="panel-body">
        <div class="form-group">
         <label for="email">Morning:</label>
-        <input type="email" class="form-control" id="email" placeholder="Breakfast special...?" required autofocus="true" ng-model="morning">
+        <input type="email" class="form-control" id="email" placeholder="Breakfast special...?"  autofocus="true" ng-model="morning">
       </div>
       <div class="form-group">
         <label for="pwd">Afternoon:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Lunch special...?" ng-model="afternoon" required >
+        <input type="text" class="form-control" id="pwd" placeholder="Lunch special...?" ng-model="afternoon"  >
       </div>
       <div class="form-group">
         <label for="pwd">Evening:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Evening special..?" ng-model="evening" required>
+        <input type="text" class="form-control" id="pwd" placeholder="Evening special..?" ng-model="evening" >
       </div>
       <div class="form-group">
         <label for="pwd">Night:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Dinner special..?" ng-model="night" required>
+        <input type="text" class="form-control" id="pwd" placeholder="Dinner special..?" ng-model="night" >
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="panel-group">
+ <div class="panel panel-success">
+  <div class="panel-heading">Outside Work</div>
+  <div class="panel-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+          <label><i>Reading :</i></label>
+          </td>
+          <td>
+           <select class="form-control" id="sel1" ng-model="record.read">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+             <option>5</option>
+          </select>
+          
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
 </div>
 
 <div class="panel-group">
-   <div class="panel panel-success">
-    <div class="panel-heading">Outside Work</div>
-    <div class="panel-body">
-     <div class="form-group">
-      <label for="pwd">Place:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="place" required>
-    </div>
+ <div class="panel panel-success">
+  <div class="panel-heading">Outside Work</div>
+  <div class="panel-body">
+   <div class="form-group">
+    <label for="pwd">Place:</label>
+    <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="place" >
   </div>
+</div>
 </div>
 </div>
 
 <div class="panel-group">
-   <div class="panel panel-warning">
-    <div class="panel-heading">Add Expense</div>
-    <div class="panel-body">
-     <div add-expense-form ></div>
+ <div class="panel panel-warning">
+  <div class="panel-heading">Add Expense</div>
+  <div class="panel-body">
+   <div add-expense-form ></div>
+ </div>
+</div>
+</div>
+
+
+
+<div class="panel-group">
+ <div class="panel panel-danger">
+  <div class="panel-heading">Extras</div>
+  <div class="panel-body">
+   <div class="form-group">
+    <label for="comment">Comments:</label>
+    <textarea class="form-control" rows="2" ng-model="comments" id="record.comments"></textarea>
   </div>
 </div>
 </div>
-
-
-
- <div class="panel-group">
-   <div class="panel panel-danger">
-    <div class="panel-heading">Extras</div>
-    <div class="panel-body">
-     <div class="form-group">
-      <label for="comment">Comments:</label>
-      <textarea class="form-control" rows="2" ng-model="comments" id="record.comments"></textarea>
-    </div>
-  </div>
 </div>
-</div>
-
-
-
-  
-
- 
 </form>
