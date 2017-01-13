@@ -12,7 +12,6 @@
  app.controller('DashboardCtrl',['$scope','Restangular','$localStorage','$timeout' ,'$rootScope','$location' ,function ($scope, Restangular,$localStorage, $timeout,$rootScope,$location,RestangularProvider) {
 
  	$scope.getDate = function(){
- 		debugger;
   		$scope.newDate = new Date();
  	};
 
@@ -39,7 +38,6 @@
  	"place" : "",	"comments" : ""}];
 
  	$scope.getTodaysRecord = function(){
- 		debugger;
  		var getTodaysRecordParams = {
  			"auth_token" : localStorage.getItem("auth_token"),
  			"date" : $("#date").val().split("-").reverse().join("-")
@@ -75,7 +73,6 @@
  	};
 
  	$scope.getExpenses = function(){
- 		debugger;
  		var getExpenseParams = {
  			"auth_token" : localStorage.getItem("auth_token"),
  			"date" : $("#date").val().split("-").reverse().join("-")
