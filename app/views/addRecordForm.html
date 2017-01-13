@@ -1,51 +1,90 @@
-<form name="myForm" >
-  <div class="form-group jumbotron" ng-init="addrecorddate=newDate"  >
-    <label for="email">Date:</label>
-    <input type="date" class="form-control" id="date" ng-model="addrecorddate" >
-  </div>
-   <!-- <div class="panel-group">
+<div select-date ></div>
+<form name="myForm" ng-repeat="recordInputfield in recordFormInput" >
+  <!--  <div class="panel-group">
      <div class="panel panel-primary">
       <div class="panel-heading"><i>Good Food Good Mood</i></div>
       <div class="panel-body">
        <div class="form-group">
         <label for="email">Morning:</label>
-        <input type="email" class="form-control" id="email" placeholder="Breakfast special...?"  autofocus="true" ng-model="morning">
+        <input type="email" class="form-control" id="email" placeholder="Breakfast special...?"   ng-model="recordInputfield.morning">
       </div>
       <div class="form-group">
         <label for="pwd">Afternoon:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Lunch special...?" ng-model="afternoon"  >
+        <input type="text" class="form-control" id="pwd" placeholder="Lunch special...?" ng-model="recordInputfield.afternoon"  >
       </div>
       <div class="form-group">
         <label for="pwd">Evening:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Evening special..?" ng-model="evening" >
+        <input type="text" class="form-control" id="pwd" placeholder="Evening special..?" ng-model="recordInputfield.evening" >
       </div>
       <div class="form-group">
         <label for="pwd">Night:</label>
-        <input type="text" class="form-control" id="pwd" placeholder="Dinner special..?" ng-model="night" >
+        <input type="text" class="form-control" id="pwd" placeholder="Dinner special..?" ng-model="recordInputfield.night" >
       </div>
     </div>
   </div>
 </div> -->
 
-<div class="panel-group">
+<!-- <div class="panel-group">
  <div class="panel panel-success">
-  <div class="panel-heading">Outside Work</div>
+ <div class="panel-heading">Daily Routine</div>
   <div class="panel-body">
-    <table class="table">
+    <table class="table" border="1">
       <tbody>
         <tr>
           <td>
-          <label><i>Reading :</i></label>
+            <label><i>Reading Skill(Hours) :</i></label>
           </td>
           <td>
-           <select class="form-control" id="sel1" ng-model="record.read">
+           <select class="form-control" id="sel1" ng-model="recordInputfield.read">
+            <option>0</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
-             <option>5</option>
+            <option>5</option>
           </select>
           
+        </td>
+      </tr>
+      <tr>
+        <td> <label><i>Sleep(Hours) :</i></label></td>
+        <td>
+         <input class="form-control" type="text" ng-model="recordInputfield.sleep">
+        </td>
+      </tr>
+      <tr>
+        <td> <label><i>Water(liters) :</i></label></td>
+        <td>
+         <input class="form-control" type="text" ng-model="recordInputfield.water">
+        </td>
+      </tr>
+       <tr>
+        <td> <label><i>Exercise(Minutes):</i></label></td>
+        <td>
+          <select class="form-control" id="sel1" ng-model="recordInputfield.exercise">
+            <option>YES</option>
+            <option>NO</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td> <label><i>Bathing:</i></label></td>
+        <td>
+          <select class="form-control" id="sel1" ng-model="recordInputfield.bath">
+            <option>YES</option>
+            <option>NO</option>
+          </select>
+        </td>
+      </tr>
+       <tr>
+        <td> <label><i>Health:</i></label></td>
+        <td>
+          <select class="form-control" id="sel1" ng-model="recordInputfield.health">
+             <option>Good</option>
+            <option>Normal</option>
+            <option>Medicated</option>
+             <option>Bad</option>
+          </select>
         </td>
       </tr>
 
@@ -53,15 +92,15 @@
   </table>
 </div>
 </div>
-</div>
+</div> -->
 
 <div class="panel-group">
  <div class="panel panel-success">
-  <div class="panel-heading">Outside Work</div>
+  <div class="panel-heading">Work</div>
   <div class="panel-body">
    <div class="form-group">
     <label for="pwd">Place:</label>
-    <input type="text" class="form-control" id="pwd" placeholder="Where u went?" ng-model="place" >
+    <textarea  class="form-control" rows="3" id="place" placeholder="Where u went?" ng-model="recordInputfield.place" ></textarea>
   </div>
 </div>
 </div>
@@ -76,15 +115,13 @@
 </div>
 </div>
 
-
-
 <div class="panel-group">
  <div class="panel panel-danger">
   <div class="panel-heading">Extras</div>
   <div class="panel-body">
    <div class="form-group">
     <label for="comment">Comments:</label>
-    <textarea class="form-control" rows="2" ng-model="comments" id="record.comments"></textarea>
+    <textarea class="form-control" rows="2" ng-model="recordInputfield.comments" id="comments"></textarea>
   </div>
 </div>
 </div>

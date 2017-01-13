@@ -1,28 +1,55 @@
  <div class="row ">
- <div class="col-md-11">
- 	<form >
- 		<table  class="table" >
- 			<thead>
- 				<tr><th>Product:</th><th>Price:</th><th><button ng-click="addExpenseField()" >add</button></th></tr>
- 			</thead>
- 			<tbody>
- 				<tr ng-repeat="inputfield in expenseFormInput">
- 					<td>
- 						<div class="form-group">
- 						<textarea class="form-control" cols="80" rows="2" id="product" placeholder="product name...?" autofocus="true" ng-model="inputfield.product"></textarea>
- 						</div>
- 					</td>
- 					<td>
- 						<div class="form-group">
- 							<input type="number"  class="form-control" id="product" placeholder="price"   ng-model="inputfield.price">
- 						</div>
- 					</td>
- 					<td>
- 						<button ng-click="removeExpenseField($index)" >remove</button>
- 					</td>
- 				</tr>
- 			</tbody>
- 		</table>
- 	</form>
- </div>
+ 	<div class="col-md-6 col-md-offset-3">
+ 		<button class="btn btn-success btn-block" ng-click="addExpenseField();">Add</button>
+ 	</div>
+ </div> <br>
+ <div class="row ">
+ 	<div class="col-md-12">
+ 		<form >
+ 			<table class="table"  border="1" ng-repeat=" inputfield in expenseFormInput">
+ 				<tbody>
+ 					<tr>
+ 						<td>
+ 							<label><i>Product/reason</i></label>
+ 						</td>
+ 						<td>
+ 							<div class="form-group">
+ 								<textarea class="form-control" cols="80" rows="2" id="product" placeholder="product name...?" autofocus="true" ng-model="inputfield.product"></textarea>
+ 							</div>
+ 						</td>
+ 					</tr> 					
+ 					<tr>
+ 						<td>
+ 							<label><i>Got(Rs):</i></label>
+ 						</td>
+ 						<td>
+ 							<div class="form-group">
+ 								<input type="text"  class="form-control" id="got" placeholder="got(Credit Rs)"   ng-model="inputfield.got">
+ 							</div>
+ 						</td>
+ 					</tr> 					
+ 					<tr>
+ 						<td>
+ 							<label><i>Spent(Rs):</i></label>
+ 						</td>
+ 						<td>
+ 							<div class="form-group">
+ 								<input type="text"  class="form-control" id="spent" placeholder="spent(Debit Rs)"   ng-model="inputfield.spent">
+ 							</div>
+ 							<div class="pull-right">
+ 								<i class="red">Change(Rs:)</i>
+ 								<input type="text"  id="change" placeholder="change(Credit Rs)"   ng-model="inputfield.change">
+ 							</div>
+ 						</td>
+ 					</tr> 	
+ 					<tr>
+ 						<td></td>
+ 						<td>
+ 							<button type="button" class="btn btn-danger pull-right" ng-click="removeExpenseField($index, inputfield.id)">Remove</button>
+ 						</td>
+ 					</tr>				
+ 				</tbody>
+ 			</table>
+ 		</form>
+ 	</div>
  </div>
