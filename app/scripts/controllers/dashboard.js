@@ -1,4 +1,4 @@
-
+ 'use strict';
 /**
  * @ngdoc function
  * @name dairyFrontendApp.controller:MainCtrl
@@ -15,8 +15,6 @@
  		debugger;
   		$scope.newDate = new Date();
  	};
- 		
- 	
 
  	$scope.dateChangeEvent = function(){
  		$scope.getTodaysRecord();
@@ -51,11 +49,8 @@
  				$scope.recordFormInput=record;
  			}else
  			{
-
  				$scope.recordFormInput = response.data;
  			}
- 			console.log("todays records"+response.data);
- 			console.log("todays records"+$scope.recordFormInput);
  		});
  	};
 
@@ -66,8 +61,6 @@
  			"record" : $scope.recordFormInput,
  			"date" : $("#date").val().split("-").reverse().join("-")
  		}
-
-
  		Restangular.one("/record/create").customPOST(addRecordParams).then(function(response){
  			$scope.recordAddedSuccessfuly = false;
  			$scope.failedToCreateRecord = false;
@@ -82,6 +75,7 @@
  	};
 
  	$scope.getExpenses = function(){
+ 		debugger;
  		var getExpenseParams = {
  			"auth_token" : localStorage.getItem("auth_token"),
  			"date" : $("#date").val().split("-").reverse().join("-")

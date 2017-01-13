@@ -1,3 +1,5 @@
+ 'use strict';
+
  app.controller('RecordsCtrl',['$scope','Restangular','$localStorage','$timeout' ,'$rootScope','$location' ,function ($scope, Restangular,$localStorage, $timeout,$rootScope,$location,RestangularProvider) {
 
 getRecords();
