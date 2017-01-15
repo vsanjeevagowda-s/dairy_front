@@ -32,7 +32,6 @@
  		});
  		Restangular.all("/expense/all").customPOST(params).then(function(response){
  		console.log(response);
- 		debugger;
  		$scope.expenses = response.allExpenses;
  	});
 
@@ -115,7 +114,7 @@
  		
  		console.log($scope.expenseFormInput);
  		Restangular.one("/expense/create").customPOST(addExpenseParams).then(function(response){
- 			console.log("expense created log  "+response);
+ 			getRecords();
  		});
 
  	};

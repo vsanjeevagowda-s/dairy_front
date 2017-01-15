@@ -8,5 +8,11 @@
 .recordTitle{
 	width: 80px;
 }
-	
+.expenseTable{
+	font-size: 0px;
+	width: 10px;
+}
+.expenseTable{
+	font-size: 70%;
+}
 }
