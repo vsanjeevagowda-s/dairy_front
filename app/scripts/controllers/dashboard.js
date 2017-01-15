@@ -30,6 +30,11 @@
  		Restangular.all("/record/list").customPOST(params).then(function(response){
  			$scope.records = response.data;
  		});
+ 		Restangular.all("/expense/all").customPOST(params).then(function(response){
+ 		console.log(response);
+ 		debugger;
+ 		$scope.expenses = response.allExpenses;
+ 	});
 
  	};
 
