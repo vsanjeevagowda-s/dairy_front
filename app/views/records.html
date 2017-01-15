@@ -1,46 +1,127 @@
 	<div ng-controller="RecordsCtrl">
-	<div nav-bar2 ></div>
-<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8 well">
-			<div class="listRecords well well-sm" ng-repeat="record in records | orderBy : '-created_at'">
-				<a data-target="#demo-{{record.id}}" class="btn btn-primary btn-block" data-toggle="collapse">{{record.date }}</a><br>
-				<div id="demo-{{record.id}}" class="collapse">
-					{{record}}
-
-
-					<table class="table table-bordered">
-						<thead>
-							<tr>
-								<th>TITLE</th>
-								<th>DESC</th>
-								<th>Email</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>John</td>
-								<td>Doe</td>
-								<td>john@example.com</td>
-							</tr>
-							<tr>
-								<td>Mary</td>
-								<td>Moe</td>
-								<td>mary@example.com</td>
-							</tr>
-							<tr>
-								<td>July</td>
-								<td>Dooley</td>
-								<td>july@example.com</td>
-							</tr>
-						</tbody>
-					</table>
-
-				</div>
+		<div nav-bar2 ></div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 well">
+				<div class="panel-group" id="accordion">
+					<div class="panel" ng-repeat="record in records | orderBy : '-date'">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" class="btn btn-primary btn-block" data-parent="#accordion" data-target="#collapse-{{record.id}}">{{record.date }}</a>
+							</h4>
+						</div>
+						<div id="collapse-{{record.id}}" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="panel-group">
+									<div class="panel panel-success">
+										<div class="panel-heading"><h6>Record</h6></div>
+										<div class="panel-body dailyRecord">
+											<table class="table" border="2">
+												<tbody>
+													<tr>
+														<td class="success">
+															<b>Morning :</b>
+														</td>
+														<td>
+															{{record.morning}}
+														</td>
+													</tr>
+													<tr>
+														<td class="success">
+															<b>Afternoon :</b>
+														</td>
+														<td>
+															{{record.afternoon}}
+														</td>
+													</tr>
+													<tr>
+														<td class="success">
+															<b>Evening:</b>
+														</td>
+														<td>
+															{{record.evening}}
+														</td>
+													</tr>
+													<tr>
+														<td class="success">
+															<b>Night:</b>
+														</td>
+														<td>
+															{{record.night}}
+														</td>
+													</tr>
+												</tbody>
+											</table >
+											<table class="table" border="1">
+												<thead>
+													<tr class="success">
+														<td>Read :</td>
+														<td>Exercise :</td>
+														<td>Last Sleep :</td>
+													</tr>
+													<tr>
+														<td>{{record.read}}</td>
+														<td>{{record.exercise}}</td>
+														<td>{{record.sleep}}</td>
+													</tr>
+												</thead>
+											</table>
+											<table class="table" border="1">
+												<thead>
+													<tr class="success">
+														<td>Health :</td>
+														<td>Bath :</td>
+														<td>Water(l) :</td>
+													</tr>
+													<tr>
+														<td>{{record.health}}</td>
+														<td>{{record.bath}}</td>
+														<td>{{record.sleep}}</td>
+													</tr>
+												</thead>
+											</table>
+											<table class="table" border="2">
+												<tbody>
+													<tr>
+														<td><b>Place : </b>{{record.place}}</td>
+													</tr>
+													<tr >
+														<td><b>Comment : </b>{{record.comments}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel-group">
+									<div class="panel panel-danger">
+										<div class="panel-heading"><h6>Expense</h6></div>
+										<div class="panel-body dailyRecord">
+											<table class="table" border="2" ng-repeat="expense in expenses | filter : record.date">
+												<thead>
+													<tr><td colspan="3"><b>Product/reason : </b><i>{{expense.product}}</i> </td></tr>
+												</thead>
+												<tbody>
+													<tr class="danger">
+														<td>Got(Rs)</td>
+														<td>Spent(Rs)</td>
+														<td>Change(Rs)</td>
+													</tr>	
+													<tr >
+														<td>{{expense.got}}</td>
+														<td>{{expense.spent}}</td>
+														<td>{{expense.change}}</td>
+													</tr>										
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
 			</div>
+			<div class="col-md-2"></div>
 		</div>
-		<div class="col-md-2"></div>
-	</div>
-
-
 	</div>

@@ -1,0 +1,12 @@
+@media screen and (max-width: 480px) {
+	.recordListTable{
+		font-size: 10px;
+	}
+	.expenseForm{
+		font-size: 10px;
+	}
+.recordTitle{
+	width: 80px;
+}
+	
+}

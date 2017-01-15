@@ -13,7 +13,15 @@ function getRecords(){
  		$scope.records = response.data;
  	});
 
+ 		Restangular.all("/expense/all").customPOST(params).then(function(response){
+ 		console.log(response);
+ 		debugger;
+ 		$scope.expenses = response.allExpenses;
+ 	});
+
 };
+
+
 
 
  }]);
