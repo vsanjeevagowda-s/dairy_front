@@ -40,6 +40,11 @@
     controller: 'RecordsCtrl'
     
   })
+  .when("/expense", {
+    templateUrl: 'views/expense.html',
+    controller: 'ExpenseCtrl'
+    
+  })
   .otherwise({
     redirectTo: '/'
   });
