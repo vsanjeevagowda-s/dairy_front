@@ -16,9 +16,10 @@
   'ngSanitize',
   'ngTouch',
   'ngStorage',
-  'restangular'
+  'restangular',
+  'chart.js'
   ]);
- app.config(function ($routeProvider, RestangularProvider) {
+ app.config(function ($routeProvider, RestangularProvider, ChartJsProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/login.html',
@@ -40,17 +41,27 @@
     controller: 'RecordsCtrl'
     
   })
-  .when("/expense", {
-    templateUrl: 'views/expense.html',
-    controller: 'ExpenseCtrl'
+  .when("/day_expense", {
+    templateUrl: 'views/day.html',
+    controller: 'DayCtrl'
+    
+  })
+  .when("/month_expense", {
+    templateUrl: 'views/month.html',
+    controller: 'MonthCtrl'
+    
+  })
+  .when("/year_expense", {
+    templateUrl: 'views/year.html',
+    controller: 'YearCtrl'
     
   })
   .otherwise({
     redirectTo: '/'
   });
 
- RestangularProvider.setBaseUrl('https://diary-back.herokuapp.com');
-  
+ RestangularProvider.setBaseUrl('http://localhost:3000');
+  ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 });
 
 
@@ -79,6 +90,13 @@ app.directive('navBar2', function(){
 app.directive('selectDate', function(){
   return{
     templateUrl: "views/selectDate.html"
+
+  }
+});
+
+app.directive('expenseGraphViewSelect', function(){
+  return{
+    templateUrl: "views/expenseGraphViewSelect.html"
 
   }
 });
