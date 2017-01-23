@@ -60,7 +60,7 @@
     redirectTo: '/'
   });
 
- RestangularProvider.setBaseUrl('https://diary-back.herokuapp.com');
+ RestangularProvider.setBaseUrl('http://localhost:3000');
   ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 });
 
